@@ -8,7 +8,7 @@
   :serial t
   :depends-on (:hunchentoot :ironclad :bordeaux-threads)
   :build-operation "program-op"
-:build-pathname "bin/keys"
-:entry-point "ecl-project:main"
+:build-pathname "bin/server"
+:entry-point "ecl-project:start-server"
   :components ((:module "src"
-                :components ((:file "keys")))))
+                :components ((:file "server")))))
