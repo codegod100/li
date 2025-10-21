@@ -57,6 +57,4 @@
   (format t "Factorial of 5 is ~a~%" (factorial 5))|#
   (generate-curve25519-key)
   (generate-keys-multi-threaded 4)
-  (ext:quit))
-
-(main)
+  (sb-ext:exit))

@@ -6,9 +6,9 @@
   :license "MIT"
   :version "0.1.0"
   :serial t
-  :depends-on (:ironclad :bordeaux-threads)
+  :depends-on (:hunchentoot :ironclad :bordeaux-threads)
   :build-operation "program-op"
-:build-pathname "bin/churn"
-:entry-point "ecl-project:main-churn"
+:build-pathname "bin/keys"
+:entry-point "ecl-project:main"
   :components ((:module "src"
-                :components ((:file "churn")))))
+                :components ((:file "keys")))))

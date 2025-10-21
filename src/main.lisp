@@ -1,8 +1,8 @@
-(defpackage :sbcl-project
+(defpackage :ecl-project
   (:use :cl :ironclad :bordeaux-threads)
   (:export :main :start-server :generate-curve25519-key :generate-keys-multi-threaded))
 
-(in-package :sbcl-project)
+(in-package :ecl-project)
 
 (defparameter *num-threads* 4)
 
@@ -55,15 +55,6 @@
             threads))
     (mapc #'bt:join-thread threads)))
 
-#|
-(defun read-file-into-string (path)
-  (with-open-file (stream path :direction :input :if-does-not-exist nil)
-    (when stream
-      (let ((contents (make-string (file-length stream))))
-        (read-sequence contents stream)
-        contents))))
-|#
-
 (defun main ()
   #|(hello)
   (format t "Factorial of 5 is ~a~%" (factorial 5))|#
@@ -72,33 +63,6 @@
 
 (defun main-churn ()
   (churn-threads 16))
-
-#|
-(hunchentoot:define-easy-handler (factorial-handler :uri "/factorial") (n)
-  (let ((num (parse-integer n :junk-allowed t)))
-    (if (string= (hunchentoot:header-in* "X-Requested-With") "XMLHttpRequest")
-        ;; AJAX request: return JSON
-        (progn
-          (setf (hunchentoot:content-type*) "application/json")
-          (if num
-              (format nil "{\"number\": ~a, \"result\": ~a}" num (factorial num))
-              "{\"error\": \"Invalid number\"}"))
-        ;; Direct request: return HTML
-        (progn
-          (setf (hunchentoot:content-type*) "text/html")
-          (if num
-              (format nil "<html><head><title>Factorial Result</title></head><body><h1>Factorial of ~a is ~a</h1><a href='/'>Back</a></body></html>" num (factorial num))
-              "<html><head><title>Error</title></head><body><h1>Invalid number</h1><a href='/'>Back</a></body></html>")))))
-
-(hunchentoot:define-easy-handler (hello-handler :uri "/") ()
-  (setf (hunchentoot:content-type*) "text/html")
-  (read-file-into-string (merge-pathnames "static/index.html" (asdf:system-source-directory :sbcl-project))))
-
-#|
-(defun start-server ()
-  (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 8080)))
-|#
-|#
 
 (main-churn)
 (ext:quit)
