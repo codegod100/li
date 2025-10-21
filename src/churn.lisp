@@ -20,8 +20,4 @@
     (mapc #'bt:join-thread threads)))
 
 (defun main-churn ()
-  (ext:set-signal-handler 2 (lambda () (ext:quit)))
   (churn-threads 16))
-
-(main-churn)
-(ext:quit)
