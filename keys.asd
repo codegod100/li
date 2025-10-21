@@ -11,4 +11,4 @@
   :build-pathname "bin/keys"
   :entry-point "ecl-project:main"
   :components ((:module "src"
-                :components ((:file "main")))))
+                :components ((:file "keys")))))
