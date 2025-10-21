@@ -1,14 +1,14 @@
 (load "/home/nandi/quicklisp/setup.lisp")
 
-(defsystem "ecl-project"
-  :description "An ECL project for key generation and CPU churning"
+(defsystem "churn"
+  :description "Churn build for ECL project"
   :author "Your Name"
   :license "MIT"
   :version "0.1.0"
   :serial t
-  :depends-on (:hunchentoot :ironclad :bordeaux-threads)
+  :depends-on (:ironclad :bordeaux-threads)
   :build-operation "program-op"
-:build-pathname "bin/churn"
-:entry-point "ecl-project:main-churn"
+  :build-pathname "bin/churn"
+  :entry-point "ecl-project:main-churn"
   :components ((:module "src"
                 :components ((:file "churn")))))
