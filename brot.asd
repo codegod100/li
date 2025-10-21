@@ -9,6 +9,6 @@
   :depends-on ()
   :build-operation "program-op"
   :build-pathname "bin/brot"
-  :entry-point "ecl-project:main-brot"
+  :entry-point "brot:main-brot"
   :components ((:module "src"
                 :components ((:file "brot")))))

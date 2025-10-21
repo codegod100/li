@@ -9,6 +9,6 @@
   :depends-on (:hunchentoot)
   :build-operation "program-op"
   :build-pathname "bin/server"
-  :entry-point "ecl-project:start-server"
+  :entry-point "server:start-server"
   :components ((:module "src"
                 :components ((:file "server")))))

@@ -9,6 +9,6 @@
   :depends-on (:ironclad :bordeaux-threads)
   :build-operation "program-op"
   :build-pathname "bin/churn"
-  :entry-point "ecl-project:main-churn"
+  :entry-point "churn:main-churn"
   :components ((:module "src"
                 :components ((:file "churn")))))

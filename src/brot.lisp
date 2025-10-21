@@ -1,8 +1,8 @@
-(defpackage :ecl-project
+(defpackage :brot
   (:use :cl)
   (:export :main-brot))
 
-(in-package :ecl-project)
+(in-package :brot)
 
 (defparameter *default-width* 100)
 (defparameter *default-height* 40)

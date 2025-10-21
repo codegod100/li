@@ -1,10 +1,10 @@
 
 
-(defpackage :ecl-project
-  (:use :cl :ironclad :bordeaux-threads)
-  (:export :start-server :main :generate-curve25519-key :generate-keys-multi-threaded :main-churn :churn-threads))
+(defpackage :server
+  (:use :cl :hunchentoot)
+  (:export :start-server :main))
 
-(in-package :ecl-project)
+(in-package :server)
 
 (defun read-file-into-string (path)
   (with-open-file (stream path :direction :input :if-does-not-exist nil)

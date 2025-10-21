@@ -1,8 +1,8 @@
-(defpackage :ecl-project
+(defpackage :keys
   (:use :cl :ironclad :bordeaux-threads)
   (:export :main :generate-curve25519-key :generate-keys-multi-threaded))
 
-(in-package :ecl-project)
+(in-package :keys)
 
 (defparameter *num-threads* 4)
 

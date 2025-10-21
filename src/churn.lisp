@@ -1,8 +1,8 @@
-(defpackage :ecl-project
+(defpackage :churn
   (:use :cl :ironclad :bordeaux-threads)
   (:export :main-churn :churn-threads))
 
-(in-package :ecl-project)
+(in-package :churn)
 
 (defparameter *num-threads* 4)
 

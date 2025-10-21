@@ -9,6 +9,6 @@
   :depends-on (:ironclad :bordeaux-threads)
   :build-operation "program-op"
   :build-pathname "bin/keys"
-  :entry-point "ecl-project:main"
+  :entry-point "keys:main"
   :components ((:module "src"
                 :components ((:file "keys")))))
